@@ -1,0 +1,58 @@
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #007DB8;
+  padding: 8px 16px;
+  border-radius: 16px;
+
+  width: 640px;
+  max-width: 90%;
+
+  backdrop-filter: blur(20px);
+}
+
+/* Logo */
+.logo img {
+  height: 32px;
+}
+
+/* Right section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Button */
+.btn {
+  background: white;
+  color: black;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 8px 12px;
+  cursor: pointer;
+
+  font-size: 16px;
+}
