@@ -10,6 +10,9 @@ export default function Hero() {
           <button className="btn-primary">احجز رحلتك</button>
           <button className="btn-outline">استفسر</button>
         </div>
+        <div className="plane-wrapper">
+          <img src={`${import.meta.env.BASE_URL}plane.png`} alt="plane" className="hero-plane" />
+        </div>
       </div>
     </section>
   );

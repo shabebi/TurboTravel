@@ -1,0 +1,85 @@
+.who {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  margin-top: 20px;
+}
+
+.who-shadow {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.who-card {
+  background: white;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1px 1px;
+  gap: 10px;
+  border: 1px solid #d6d6d6;
+  box-shadow:
+  10px 10px 10px rgba(0, 0, 0, 0.22),
+  6px 4px 10px rgba(0, 0, 0, 0.10);    /* soft secondary */
+}
+
+
+.who-text {
+  text-align: right;
+  direction: rtl;
+  max-width: 750px;
+}
+
+.who-text h2 {
+  color: #007db8;
+  font-size: 32px;
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.who-text p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* LOGO */
+.who-logo img {
+  width: 240px;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .who-shadow {
+    max-width: 800px;
+  }
+
+  .who-card {
+    padding: 28px 32px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .who {
+    padding: 40px 16px;
+  }
+
+  .who-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .who-text {
+    text-align: center;
+  }
+
+  .who-logo img {
+    width: 70px;
+  }
+}

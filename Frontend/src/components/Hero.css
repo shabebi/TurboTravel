@@ -1,8 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .hero {
   width: 100%;
   min-height: 100vh;
 
-  background-image: url("/hero.jpg");
+  background-image: url("/hero.png");
   background-size: cover;
   background-position: center;
 
@@ -15,10 +20,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 120px 64px 0;
-  gap: 25px;
-
+  padding: 80px 64px 0;
+  gap: 35px;
+  width: 100%;
+  max-width: 800px; 
   text-align: center;
   color: white;
 }
@@ -35,7 +40,7 @@
 }
 
 .btn-primary {
-  background: #f4a940;
+  background: #fbb146;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -46,16 +51,54 @@
 .btn-outline {
   background: transparent;
   color: #007db8;
-  border: 2px solid #f4a940;
+  border: 2px solid #fbb146;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
 }
 
+.plane-wrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  padding: 8px;
+  border-radius: 29px;
+
+  background: rgba(255, 255, 255, 0.03); 
+
+  box-shadow:
+    0px 10px 30px rgba(0, 0, 0, 0.15),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero-plane {
+  width: 100%;
+  max-width: 550px;
+
+  filter: drop-shadow(0px 15px 30px rgba(0,0,0,0.18));
+}
+
+.plane-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 20px;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(10px);
+  z-index: -1;
+}
 /* Tablet */
 @media (max-width: 1024px) {
   .hero {
-    height: 650px;
+    min-height: 654px;
   }
 
   .hero-content {
@@ -65,12 +108,22 @@
   .hero h1 {
     font-size: 36px;
   }
+
+  .hero-content {
+    padding: 96px 64px 0;
+    gap: 25px;
+    max-width: 800px;
+  }
+
+  .hero-plane {
+    max-width: 500px;
+  }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   .hero {
-    height: 540px;
+    min-height: 541px;
   }
 
   .hero-content {
@@ -90,5 +143,14 @@
   .btn-primary,
   .btn-outline {
     width: 100%;
+  }
+
+  .hero-content {
+    padding: 64px 24px;
+    gap: 64px;
+  }
+
+  .hero-plane {
+    max-width: 320px;
   }
 }
