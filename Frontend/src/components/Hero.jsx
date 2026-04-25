@@ -2,7 +2,7 @@ import "./Hero.css";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-content">
         <h1>تيربو ترافل - رحلتك تبدأ هنا</h1>
 

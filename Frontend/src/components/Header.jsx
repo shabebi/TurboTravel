@@ -15,7 +15,8 @@ export default function Header() {
         {/* Right side (nav + button together) */}
         <div className="right">
           <nav className="nav">
-            <a href="#">خدماتنا</a>
+            <a href="#contact">تواصل معنا</a>
+            <a href="#services">خدماتنا</a>
           </nav>
 
           <button className="btn">الرئيسية</button>

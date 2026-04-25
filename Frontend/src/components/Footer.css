@@ -1,0 +1,118 @@
+.footer {
+  position: relative;
+
+  background-image: url("/TurboTravel/hero.png");
+  background-size: cover;
+  background-position: center;
+
+  padding: 60px 20px 100px;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.75); /* adjust here */
+
+  z-index: 0;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 60px;
+}
+
+/* COLUMN */
+.footer-col {
+  text-align: right;
+  direction: rtl;
+  max-width: 260px;
+}
+
+
+.footer-col h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #007db8;
+}
+
+
+.footer-col p,
+.footer-col li {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.8;
+}
+
+/* LINKS */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.footer-icons i {
+  font-size: 22px;
+  color: #007db8;
+
+  background: none;    
+  width: auto;
+  height: auto;
+
+  box-shadow: none;      
+  border-radius: 0;
+
+  cursor: pointer;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+}
