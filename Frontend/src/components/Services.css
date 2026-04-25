@@ -54,7 +54,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -40px; /* 🔥 this creates the “falling” effect */
+  bottom: -40px; /
 }
 
 .service-image img {
@@ -68,21 +68,61 @@
   box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 80px;
+    max-width: 1000px;
+  }
+
+  .service-card {
+    padding: 10px 16px 160px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    font-size: 18px;
+  }
+
+  .service-image img {
+    width: 180px;
+    height: 180px;
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+
   .services-title {
-    font-size: 28px;
+    font-size: 48px;
+    margin-bottom: 50px;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    row-gap: 80px;
+  }
+
+  .service-card {
+    padding: 16px 16px 140px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    font-size: 18px;
+  }
+
+  .service-image {
+  bottom: -80px;
+  }
+
+  .service-image img {
+    width: 220px;
+    height: 210px;
   }
 }

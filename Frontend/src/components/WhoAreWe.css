@@ -53,7 +53,7 @@
 }
 
 /* ===== TABLET ===== */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .who-shadow {
     max-width: 800px;
   }
@@ -64,7 +64,7 @@
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .who {
     padding: 40px 16px;
   }
@@ -76,10 +76,14 @@
   }
 
   .who-text {
-    text-align: center;
+    order: 1;
+  }
+
+  .who-logo {
+    order: 2;
   }
 
   .who-logo img {
-    width: 70px;
+    width: 300px;
   }
 }

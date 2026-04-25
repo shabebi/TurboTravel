@@ -5,60 +5,61 @@
   background-size: cover;
   background-position: center;
 
-  padding: 60px 20px 100px;
+  padding: 60px 20px 20px; /* less bottom space */
   overflow: hidden;
 }
 
+/* overlay */
 .footer::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: rgba(255, 255, 255, 0.75); /* adjust here */
-
+  background: rgba(255, 255, 255, 0.75);
   z-index: 0;
 }
 
+/* layout */
 .footer-container {
   position: relative;
   z-index: 1;
 
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 
   gap: 60px;
 }
 
-/* COLUMN */
+/* columns */
 .footer-col {
   text-align: right;
   direction: rtl;
-  max-width: 260px;
+  flex: 1;
+  min-width: 200px;
 }
 
-
+/* titles */
 .footer-col h3 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #007db8;
 }
 
-
+/* text */
 .footer-col p,
 .footer-col li {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #222;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-/* LINKS */
+/* links */
 .footer-col ul {
   list-style: none;
   padding: 0;
@@ -66,34 +67,44 @@
 }
 
 .footer-col li {
-  margin-bottom: 8px;
-  cursor: pointer;
+  margin-bottom: 6px;
 }
 
+/* 🔥 SOCIAL COLUMN FIX (desktop alignment) */
+.footer-col:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* icons */
 .footer-icons {
   display: flex;
-  gap: 14px;
-  margin-top: 12px;
+  gap: 20px;
 }
 
 .footer-icons i {
-  font-size: 22px;
+  font-size: 30px;
   color: #007db8;
-
-  background: none;    
-  width: auto;
-  height: auto;
-
-  box-shadow: none;      
-  border-radius: 0;
-
   cursor: pointer;
 }
 
+/* links */
 a {
   color: #222;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* copyright */
+.footer-copy {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== TABLET ===== */
@@ -105,14 +116,29 @@ a {
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-end;
+    gap: 30px;
   }
 
   .footer-col {
-    text-align: center;
+    width: 100%;
+    text-align: right;
+  }
+
+  /* keep icons centered ONLY on mobile */
+  .footer-col:last-child {
+    justify-content: center;
+  }
+
+  .footer-icons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-icons i {
+    font-size: 32px;
   }
 }

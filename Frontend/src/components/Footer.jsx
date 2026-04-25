@@ -30,7 +30,6 @@ export default function Footer() {
 
         {/* SOCIAL */}
         <div className="footer-col">
-          <h3>تابعنا</h3>
           <div className="footer-icons">
             <i className="fab fa-instagram"></i>
             <i className="fab fa-facebook-f"></i>
@@ -38,6 +37,10 @@ export default function Footer() {
         </div>
 
       </div>
+
+        <div className="footer-copy">
+          جميع الحقوق محفوظة © تيربو ترافل
+        </div>
     </footer>
   );
 }
