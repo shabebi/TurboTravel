@@ -19,9 +19,10 @@
   backdrop-filter: blur(20px);
 }
 
-/* Logo */
 .logo img {
-  height: 32px;
+  height: 52px;
+  display: block;
+  object-fit: contain;
 }
 
 /* Right section */
@@ -40,7 +41,7 @@
 .nav a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* Button */
@@ -54,7 +55,7 @@
   padding: 8px 12px;
   cursor: pointer;
 
-  font-size: 16px;
+  font-size: 20px;
 }
 
 @media (max-width: 1280px) {
@@ -68,16 +69,16 @@
   }
 
   .nav a {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .btn {
-    font-size: 14px;
+    font-size: 16px;
     padding: 6px 10px;
   }
 
   .logo img {
-    height: 28px;
+    height: 48px;
   }
 }
 
@@ -101,6 +102,6 @@
   }
 
   .logo img {
-    height: 24px;
+    height: 40px;
   }
 }

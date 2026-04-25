@@ -32,7 +32,9 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-icons">
             <i className="fab fa-instagram"></i>
-            <i className="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/share/1Dyg1d6YzW/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-facebook-f"></i>
+            </a>
           </div>
         </div>
 
