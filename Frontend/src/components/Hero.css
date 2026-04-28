@@ -80,6 +80,28 @@ body {
   max-width: 500px;
 
   filter: drop-shadow(0px 15px 30px rgba(0,0,0,0.18));
+
+  /* NEW: smooth floating + slight horizontal motion */
+  animation: planeMotion 6s ease-in-out infinite;
+}
+
+/* animation that DOES NOT break layout */
+@keyframes planeMotion {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -8px) rotate(1deg);
+  }
+  50% {
+    transform: translate(20px, -12px) rotate(0deg);
+  }
+  75% {
+    transform: translate(10px, -6px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 .plane-wrapper::before {
