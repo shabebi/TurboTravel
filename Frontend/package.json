@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://shabebi.github.io/TurboTravel",
+  "homepage": "https://turbotravel.net/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
