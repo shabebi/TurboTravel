@@ -7,7 +7,7 @@ export default function VisionMission() {
       {/* ROW 1 */}
       <div className="vm-row">
         <div className="vm-image">
-          <img src="/TurboTravel/7.jpg" alt="vision" />
+          <img src="/7.jpg" alt="vision" />
         </div>
 
         <div className="vm-text">
@@ -22,7 +22,7 @@ export default function VisionMission() {
       {/* ROW 2 */}
       <div className="vm-row reverse">
         <div className="vm-image">
-          <img src="/TurboTravel/8.jpg" alt="mission" />
+          <img src="/8.jpg" alt="mission" />
         </div>
 
         <div className="vm-text">

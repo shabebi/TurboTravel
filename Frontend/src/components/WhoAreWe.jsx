@@ -8,7 +8,7 @@ export default function WhoAreWe() {
           
           {/* RIGHT SIDE (logo) */}
           <div className="who-logo">
-            <img src="/TurboTravel/logo.png" alt="logo" />
+            <img src="/logo.png" alt="logo" />
           </div>
 
           {/* TEXT */}
