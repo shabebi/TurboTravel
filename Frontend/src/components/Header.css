@@ -1,7 +1,15 @@
 .header-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+  z-index: 1000;
+
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .header {
@@ -9,30 +17,79 @@
   align-items: center;
   justify-content: space-between;
 
-  background: #007db8;
-  padding: 8px 16px;
-  border-radius: 16px;
+  direction: ltr;
+
+  /* Glassmorphism */
+  background: rgba(0, 125, 185, 0.28);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+  padding: 10px 18px;
+  border-radius: 22px;
 
   width: 940px;
   max-width: 90%;
 
-  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
 }
 
+/* atmospheric glow */
+.header::before {
+  content: "";
+
+  position: absolute;
+  inset: -2px;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0,125,185,0.38),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0,180,255,0.12),
+      transparent 40%
+    );
+
+  opacity: 0.9;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* content above glow */
+.logo,
+.right {
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo */
 .logo img {
   height: 52px;
   display: block;
   object-fit: contain;
 }
 
-/* Right section */
+/* Right Section */
 .right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Nav */
+/* Navigation */
 .nav {
   display: flex;
   gap: 20px;
@@ -42,6 +99,11 @@
   color: white;
   text-decoration: none;
   font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.nav a:hover {
+  opacity: 0.8;
 }
 
 /* Button */
@@ -50,15 +112,27 @@
   color: black;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
 
-  padding: 8px 12px;
+  padding: 8px 14px;
   cursor: pointer;
 
   font-size: 20px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 1280px) {
+
   .header {
     width: 800px;
     padding: 6px 12px;
@@ -80,9 +154,11 @@
   .logo img {
     height: 48px;
   }
+
 }
 
 @media (max-width: 800px) {
+
   .header {
     width: 95%;
     padding: 6px 10px;
@@ -104,4 +180,5 @@
   .logo img {
     height: 40px;
   }
+
 }

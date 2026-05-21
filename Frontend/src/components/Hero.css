@@ -1,180 +1,373 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-  margin: 0;
-  padding: 0;
+    background: #fbfbfc;
+
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .hero {
-  width: 100%;
-  min-height: 100vh;
+  position: relative;
 
-  background-image: url("/hero.png");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
 
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 40px;
+
+  overflow: hidden;
+
+  background:
+     linear-gradient(
+      360deg,
+      #fbfbfc 30%,
+      #4a9fd4 70%,
+      #1a3a5c 100%
+    ); 
+
 }
+
+/* =========================================
+   CLOUD LAYERS
+========================================= */
+
+.cloud-layer {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  will-change: transform, opacity, filter;
+}
+
+.cloud-img {
+  position: absolute;
+
+  width: 120%;
+  height: auto;
+
+  min-height: 100%;
+
+  object-fit: cover;
+
+  opacity: inherit;
+}
+
+.cloud-img-mirror {
+  transform: scaleX(-1);
+  left: -20%;
+}
+
+/* Layer 1 */
+.cloud-layer-1 {
+  z-index: 1;
+
+  opacity: 0.5;
+
+  filter: blur(2px);
+
+  transform: translate3d(0, 0, 0) scale(1.1);
+}
+
+/* Layer 2 */
+.cloud-layer-2 {
+  z-index: 2;
+
+  opacity: 0.6;
+
+  filter: blur(1px);
+
+  transform: translate3d(0, 0, 0) scale(1.05);
+}
+
+/* Layer 3 */
+.cloud-layer-3 {
+  z-index: 3;
+
+  opacity: 0.7;
+
+  filter: blur(0px);
+
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Layer 4 */
+.cloud-layer-4 {
+  z-index: 4;
+
+  opacity: 0.35;
+
+  filter: blur(0px);
+
+  transform: translate3d(0, 0, 0) scale(1.15);
+}
+
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 64px 0;
-  gap: 35px;
-  width: 100%;
-  max-width: 800px; 
+  position: relative;
+  z-index: 10;
+
   text-align: center;
-  color: white;
+
+  padding: 2rem;
+
+  max-width: 800px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.hero h1 {
-  font-size: 54px;
-  font-weight: 900;
+.hero-title {
+  margin-top: 100px;
+
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+  font-weight: 700;
+
+  color: #006c9e;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.02em;
+
+  text-shadow:
+    0 2px 40px rgba(0,0,0,0.5);
 }
 
-/* Buttons */
+.hero-title span {
+  color: #f9a024;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+
+  color: rgba(0, 99, 145, 0.98);
+
+  font-weight: 400;
+
+  margin-bottom: 2.5rem;
+
+  line-height: 1.6;
+
+  text-shadow:
+    0 1px 20px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
 .hero-buttons {
   display: flex;
-  gap: 16px;
+
+  gap: 1rem;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.9rem 2.2rem;
+
+  border-radius: 50px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+
+  border: none;
 }
 
 .btn-primary {
-  background: #fbb146;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 900;
-}
-
-.btn-outline {
-  background: transparent;
-  color: #007db8;
-  border: 2px solid #fbb146;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 900;
-}
-
-.plane-wrapper {
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-
-  position: relative;
-  padding: 8px;
-  border-radius: 29px;
-
-  background: rgba(255, 255, 255, 0.03); 
+  background: #fff;
+  color: #1a3a5c;
 
   box-shadow:
-    0px 10px 30px rgba(0, 0, 0, 0.15),
-    inset 0px 1px 1px rgba(255, 255, 255, 0.1);
+    0 4px 30px rgba(255,255,255,0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 40px rgba(255,255,255,0.35);
+}
+
+.btn-secondary {
+  background: rgba(0,125,180,0.55);
+
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.25);
+
+  color: #006c9e;
+
+  border:  1px solid rgba(0,125,180,0.55);;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   PLANE
+========================================= */
+
+.plane-wrapper {
+  margin-top: 10px;
+  margin-left: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 550px;
+  height: 250px;
+
+  padding: 0;
+
+  line-height: 0;
+
+  border-radius: 29px;
+
+  background: rgba(0, 99, 145, 0.15);
+
+  box-shadow:
+    0px 10px 30px rgba(0,0,0,0.15),
+    inset 0px 1px 1px rgba(255,255,255,0.1);
+
+  overflow: visible;
 }
 
 .hero-plane {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
 
-  filter: drop-shadow(0px 15px 30px rgba(0,0,0,0.18));
+  filter:
+    drop-shadow(0px 15px 30px rgba(0,0,0,0.18));
 
-  /* NEW: smooth floating + slight horizontal motion */
-  animation: planeMotion 6s ease-in-out infinite;
+  animation:
+    planeMotion 6s ease-in-out infinite;
+
+    padding-top:50px ;
+
+  will-change: transform;
 }
 
-/* animation that DOES NOT break layout */
 @keyframes planeMotion {
+
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0,0) rotate(0deg);
   }
+
   25% {
-    transform: translate(10px, -8px) rotate(1deg);
+    transform: translate(10px,-8px) rotate(1deg);
   }
+
   50% {
-    transform: translate(20px, -12px) rotate(0deg);
+    transform: translate(20px,-12px) rotate(0deg);
   }
+
   75% {
-    transform: translate(10px, -6px) rotate(-1deg);
+    transform: translate(10px,-6px) rotate(-1deg);
   }
+
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0,0) rotate(0deg);
   }
+
+
 }
 
 .plane-wrapper::before {
   content: "";
+
   position: absolute;
+
   inset: -6px;
+
   border-radius: 20px;
 
-  background: radial-gradient(
-    circle at top left,
-    rgba(255, 255, 255, 0.12),
-    transparent 70%
-  );
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.12),
+      transparent 70%
+    );
 
   filter: blur(10px);
+
   z-index: -1;
 }
-/* Tablet */
-@media (max-width: 1280px) {
-  .hero {
-    min-height: 654px;
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2.2rem;
   }
 
-  .hero-content {
-    padding: 96px 64px 0;
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
-  .hero-content {
-    padding: 96px 64px 0;
-    gap: 25px;
-    max-width: 800px;
-  }
-
-  .hero-plane {
-    max-width: 400px;
-  }
-}
-
-/* Mobile */
-/* Mobile */
-@media (max-width: 800px) {
-  .hero {
-    min-height: 541px;
-  }
-
-  .hero-content {
-    padding: 64px 24px;
-    gap: 32px; /* cleaner spacing */
-  }
-
-  /* 🔥 BIGGER TITLE */
-  .hero h1 {
-    font-size: 38px;   /* was 32 */
-    line-height: 1.4;
-  }
-
-  /* 🔥 BUTTONS */
   .hero-buttons {
     flex-direction: column;
-    width: 50%;
-    gap: 12px;
+    align-items: center;
   }
 
-  .btn-primary,
-  .btn-outline {
+  .btn {
     width: 100%;
-    padding: 14px 20px;   /* bigger buttons */
-    font-size: 16px;      /* bigger text */
-    border-radius: 10px;
+    max-width: 280px;
   }
 
-  /* plane stays proportional */
-  .hero-plane {
-    max-width: 320px;
+}
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.8rem;
   }
+
 }
