@@ -342,32 +342,147 @@ html {
    RESPONSIVE
 ========================================= */
 
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 992px) {
+
+  .hero {
+    min-height: auto;
+    padding: 120px 20px 80px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 1rem;
+  }
 
   .hero-title {
-    font-size: 2.2rem;
+    margin-top: 40px;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.3;
   }
 
   .hero-subtitle {
     font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .plane-wrapper {
+    width: 420px;
+    height: 200px;
+
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .hero-plane {
+    max-width: 320px;
+    padding-top: 30px;
+  }
+
+}
+
+
+/* Phones */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 110px 16px 60px;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
+  }
+
+  .plane-wrapper {
+    width: 100%;
+    max-width: 340px;
+    height: 170px;
+
+    margin: 25px auto 0;
+
+    border-radius: 22px;
+  }
+
+  .hero-plane {
+    width: 100%;
+    max-width: 260px;
+
+    padding-top: 20px;
   }
 
 }
 
+
+/* Small phones */
 @media (max-width: 480px) {
 
+  .hero {
+    padding: 100px 14px 50px;
+  }
+
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .plane-wrapper {
+    max-width: 280px;
+    height: 145px;
+  }
+
+  .hero-plane {
+    max-width: 220px;
+    padding-top: 15px;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.8rem;
+  }
+
+}
+
+
+/* Extra small devices */
+@media (max-width: 360px) {
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .plane-wrapper {
+    max-width: 240px;
+    height: 125px;
+  }
+
+  .hero-plane {
+    max-width: 190px;
   }
 
 }
