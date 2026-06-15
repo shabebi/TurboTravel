@@ -58,7 +58,8 @@ html {
 .cloud-img {
   position: absolute;
 
-  width: 120%;
+  width: 150%;
+  left: -25%;
   height: auto;
 
   min-height: 100%;
@@ -343,7 +344,7 @@ html {
 ========================================= */
 
 /* Tablets */
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
 
   .hero {
     min-height: auto;
@@ -377,6 +378,11 @@ html {
   .hero-plane {
     max-width: 320px;
     padding-top: 30px;
+  }
+
+  .cloud-img {
+    width: 200%;
+    left: -100%;
   }
 
 }
@@ -432,6 +438,11 @@ html {
     padding-top: 20px;
   }
 
+  .cloud-img {
+    width: 290%;
+    left: -100%;
+  }
+
 }
 
 
@@ -466,6 +477,11 @@ html {
     padding: 0.85rem 1.8rem;
   }
 
+  .cloud-img {
+    width: 350%;
+    left: -100%;
+  }
+
 }
 
 
@@ -483,6 +499,11 @@ html {
 
   .hero-plane {
     max-width: 190px;
+  }
+
+  .cloud-img { 
+    width: 400%;
+    left: -100%;
   }
 
 }
