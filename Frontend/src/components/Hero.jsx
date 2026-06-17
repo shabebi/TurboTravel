@@ -106,7 +106,7 @@ export default function Hero() {
           `blur(${currentBlur}px)`;
       });
     }
-
+    //hi
     function updateContent(progress) {
 
       const contentY = progress * -30;
